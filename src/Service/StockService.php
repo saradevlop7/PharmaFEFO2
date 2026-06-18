@@ -8,7 +8,7 @@ class StockService {
         $this->db = Database::getConnection();
     }
 
-    /** Ajoute un lot (US 1.1) */
+  
     public function addBatch(array $data): array {
         // Trouve ou crée le médicament
         $stmt = $this->db->prepare('SELECT id FROM medications WHERE name = ?');

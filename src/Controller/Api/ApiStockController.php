@@ -25,7 +25,7 @@ class ApiStockController {
         echo json_encode(['success' => true, 'message' => 'Lot ajouté avec succès.', 'data' => $result]);
     }
 
-    /** GET /api/v1/batches  (US 2.1) */
+   
     public function batches(): void {
         AuthService::requireRole('PHARMACIEN', 'ADMIN');
         $criteria = $_GET['criteria'] ?? null;

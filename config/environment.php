@@ -18,7 +18,7 @@ define('DB_USER',    $_ENV['DB_USER']    ?? getenv('DB_USER')    ?? 'root');
 define('DB_PASS',    $_ENV['DB_PASS']    ?? getenv('DB_PASS')    ?? '');
 define('APP_SECRET', $_ENV['APP_SECRET'] ?? getenv('APP_SECRET') ?? 'secret');
 
-// Mode miroir Jour 5
+
 if (APP_ENV === 'dev') {
     ini_set('display_errors', '1');
     error_reporting(E_ALL);

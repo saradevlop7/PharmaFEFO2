@@ -53,7 +53,7 @@ class ApiStockController {
         echo json_encode(['success' => true, 'message' => '1 boîte délivrée (FEFO).', 'data' => $result]);
     }
 
-    /** PATCH /api/v1/stock/destroy/{id}  (US 4.1) */
+   
     public function destroy(string $id): void {
         AuthService::requireRole('PHARMACIEN', 'ADMIN');
         $this->service->destroyBatch((int)$id);

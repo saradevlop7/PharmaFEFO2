@@ -1,6 +1,5 @@
 <?php
-// PHP built-in server router — remplace le .htaccess
-// Usage: php -S localhost:8000 router.php
+
 
 $uri = $_SERVER['REQUEST_URI'];
 

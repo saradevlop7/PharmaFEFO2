@@ -7,8 +7,9 @@ if (file_exists($envFile)) {
         $_ENV[trim($key)] = trim($val);
         putenv(trim($key) . '=' . trim($val));
     }
-    
+
 }
+
 define('APP_ENV',    $_ENV['APP_ENV']    ?? getenv('APP_ENV')    ?? 'prod');
 define('DB_HOST',    $_ENV['DB_HOST']    ?? getenv('DB_HOST')    ?? 'localhost');
 define('DB_PORT',    $_ENV['DB_PORT']    ?? getenv('DB_PORT')    ?? '3306');

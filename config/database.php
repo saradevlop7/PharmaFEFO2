@@ -3,6 +3,7 @@ require_once dirname(__DIR__) . '/config/environment.php';
 
 class Database {
     private static ?PDO $instance = null;
+    
 
     public static function getConnection(): PDO {
         if (self::$instance === null) {
@@ -23,6 +24,6 @@ class Database {
             }
         }
         return self::$instance;
-        
+
     }
 }

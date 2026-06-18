@@ -40,7 +40,7 @@ class ApiStockController {
         echo json_encode(['success' => true, 'count' => $count]);
     }
 
-    /** POST /api/v1/stock/deliver  (US 3.1) */
+   
     public function deliver(): void {
         AuthService::requireRole('PHARMACIEN', 'ADMIN');
         $data = json_decode(file_get_contents('php://input'), true);

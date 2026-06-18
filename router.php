@@ -6,7 +6,7 @@ $uri = $_SERVER['REQUEST_URI'];
 
 $file = __DIR__ . '/public' . parse_url($uri, PHP_URL_PATH);
 if (is_file($file)) {
-    return false; // PHP built-in server sert le fichier tel quel
+    return false;
 }
 
 // Tout le reste → index.php

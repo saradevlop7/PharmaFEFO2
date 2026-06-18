@@ -49,7 +49,7 @@ class StockService {
         return $this->db->query($sql)->fetchAll();
     }
 
-    /** Compte les lots périmant ce mois (US 2.2) */
+    
     public function countExpiringThisMonth(): int {
         $stmt = $this->db->query(
             'SELECT COUNT(*) FROM batches

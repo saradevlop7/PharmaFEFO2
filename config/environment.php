@@ -6,6 +6,7 @@ if (file_exists($envFile)) {
         [$key, $val] = explode('=', $line, 2);
         $_ENV[trim($key)] = trim($val);
         putenv(trim($key) . '=' . trim($val));
+        
     }
 
 }

@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS stock_movements (
     FOREIGN KEY (user_id)  REFERENCES users(id)
 );
 
--- Seed users (password = "password" hashed)
+
 INSERT IGNORE INTO users (username, password, role) VALUES
   ('admin',       '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'ADMIN'),
   ('pharmacien',  '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'PHARMACIEN'),

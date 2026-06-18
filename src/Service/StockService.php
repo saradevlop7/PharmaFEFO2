@@ -33,7 +33,7 @@ class StockService {
         return ['id' => $batchId];
     }
 
-    /** Retourne tous les lots actifs triés FEFO */
+   
     public function getAllBatches(?string $criteria = null): array {
         $where = 'b.status = "active"';
         if ($criteria === 'critical') {

@@ -59,7 +59,7 @@ class StockService {
         return (int) $stmt->fetchColumn();
     }
 
-    /** Délivrance FEFO : décrémente le lot le plus proche de péremption (US 3.1) */
+    
     public function deliverOne(string $medicationName): array {
         $stmt = $this->db->prepare(
             'SELECT b.* FROM batches b

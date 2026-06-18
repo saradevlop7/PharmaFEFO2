@@ -80,7 +80,7 @@ class StockService {
         return ['batch_id' => $batch['id'], 'lot_number' => $batch['lot_number'], 'new_qty' => $newQty];
     }
 
-    /** Détruire un lot (US 4.1) */
+  
     public function destroyBatch(int $batchId): void {
         $this->db->prepare('UPDATE batches SET status = "destroyed", quantity = 0 WHERE id = ?')
                  ->execute([$batchId]);

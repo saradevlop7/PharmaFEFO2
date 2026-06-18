@@ -10,7 +10,7 @@ class StockService {
 
   
     public function addBatch(array $data): array {
-        // Trouve ou crée le médicament
+      
         $stmt = $this->db->prepare('SELECT id FROM medications WHERE name = ?');
         $stmt->execute([$data['name']]);
         $med = $stmt->fetch();

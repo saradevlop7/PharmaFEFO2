@@ -3,7 +3,7 @@
 
 $uri = $_SERVER['REQUEST_URI'];
 
-// Sert les fichiers statiques (CSS, JS, images) directement
+
 $file = __DIR__ . '/public' . parse_url($uri, PHP_URL_PATH);
 if (is_file($file)) {
     return false; // PHP built-in server sert le fichier tel quel

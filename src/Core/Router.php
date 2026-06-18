@@ -20,7 +20,6 @@ class Router {
                 array_shift($matches);
                 [$class, $action] = $handler;
                 require_once dirname(__DIR__) . "/Controller/{$class}.php";
-                // Extract just the class name (e.g. "Api/ApiStockController" → "ApiStockController")
                 $className  = basename(str_replace('\\', '/', $class));
                 $controller = new $className();
                 $controller->$action(...$matches);

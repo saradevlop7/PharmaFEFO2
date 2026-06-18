@@ -1,0 +1,15 @@
+<?php
+// PHP built-in server router — remplace le .htaccess
+// Usage: php -S localhost:8000 router.php
+
+$uri = $_SERVER['REQUEST_URI'];
+
+// Sert les fichiers statiques (CSS, JS, images) directement
+$file = __DIR__ . '/public' . parse_url($uri, PHP_URL_PATH);
+if (is_file($file)) {
+    return false; // PHP built-in server sert le fichier tel quel
+}
+
+// Tout le reste → index.php
+$_SERVER['SCRIPT_FILENAME'] = __DIR__ . '/public/index.php';
+require __DIR__ . '/public/index.php';

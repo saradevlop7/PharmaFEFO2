@@ -1,0 +1,9 @@
+Options -Indexes
+RewriteEngine On
+
+# Sert les fichiers et dossiers existants directement (CSS, JS, images)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Tout le reste → index.php
+RewriteRule ^ index.php [QSA,L]

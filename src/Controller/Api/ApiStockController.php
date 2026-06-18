@@ -33,7 +33,7 @@ class ApiStockController {
         echo json_encode(['success' => true, 'data' => $batches]);
     }
 
-    /** GET /api/v1/stock/expiring-count  (US 2.2) */
+   
     public function expiringCount(): void {
         AuthService::requireRole('PHARMACIEN', 'ADMIN');
         $count = $this->service->countExpiringThisMonth();

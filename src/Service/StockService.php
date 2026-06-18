@@ -93,6 +93,7 @@ class StockService {
         )->execute([$batchId, $userId, $action, $qty]);
     }
 
+    
     public function getAllMovements(): array {
         return $this->db->query(
             'SELECT sm.*, b.lot_number, m.name AS medication_name, u.username, u.role

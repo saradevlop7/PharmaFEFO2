@@ -1,8 +1,8 @@
-// Jour 3 — US 1.1 : interception formulaire + fetch async
+
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('add-stock-form')
     .addEventListener('submit', async (event) => {
-      event.preventDefault(); // Bloque le rechargement
+      event.preventDefault(); 
 
       const form    = event.target;
       const errEl   = document.getElementById('stock-error');

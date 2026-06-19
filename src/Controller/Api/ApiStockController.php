@@ -11,7 +11,7 @@ class ApiStockController {
         $this->service = new StockService();
     }
 
-    /** POST /api/v1/stock/add  (US 1.1) */
+   
     public function add(): void {
         AuthService::requireRole('PREPARATEUR', 'ADMIN');
         $data = json_decode(file_get_contents('php://input'), true);

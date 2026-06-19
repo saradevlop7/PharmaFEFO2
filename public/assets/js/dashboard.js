@@ -30,18 +30,18 @@ async function loadBatches(criteria = 'all') {
 
   if (!data.success || !data.data.length) {
     tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:2rem;color:var(--muted)">Aucun lot trouvé</td></tr>';
-    // update kpi
+   
     document.getElementById('kpi-critical').textContent = '0';
     document.getElementById('kpi-total').textContent    = '0';
     return;
   }
 
-  // Update KPIs
+
   const critical = data.data.filter(b => daysUntil(b.expiry_date) <= 30).length;
   document.getElementById('kpi-critical').textContent = critical;
   document.getElementById('kpi-total').textContent    = data.data.length;
 
-  // Reconstruct DOM (US 2.1)
+ 
   tbody.innerHTML = data.data.map(b => buildRow(b)).join('');
 }
 
@@ -72,7 +72,6 @@ function buildRow(b) {
   </tr>`;
 }
 
-// ── US 3.1 : délivrance FEFO ──────────────────────────────────────────────
 async function deliverOne(id, name) {
   const res  = await fetch('/api/v1/stock/deliver', {
     method: 'POST',
@@ -87,13 +86,12 @@ async function deliverOne(id, name) {
   if (qtyEl) qtyEl.innerHTML = '<strong>' + newQty + '</strong>';
 
   if (newQty === 0) {
-    // Griser puis supprimer la ligne (US 3.1)
+ 
     const row = document.getElementById('row-' + id);
     if (row) { row.classList.add('row-expired'); setTimeout(() => row.remove(), 1200); }
   }
 }
 
-// ── US 4.1 : détruire un lot ──────────────────────────────────────────────
 async function destroyBatch(id) {
   if (!confirm('Marquer ce lot comme détruit ?')) return;
   const res  = await fetch('/api/v1/stock/destroy/' + id, { method: 'PATCH' });

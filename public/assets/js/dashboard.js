@@ -13,7 +13,7 @@ async function loadExpiringCount() {
   }
 }
 
-// ── US 2.1 : filtre dynamique ─────────────────────────────────────────────
+
 function filterBatches(criteria, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');

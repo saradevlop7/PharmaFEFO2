@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   loadBatches('all');  // chargement initial
 });
 
-// ── US 2.2 : compteur dynamique ───────────────────────────────────────────
 async function loadExpiringCount() {
   const res  = await fetch('/api/v1/stock/expiring-count');
   const data = await res.json();
